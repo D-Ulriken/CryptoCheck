@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,14 +26,13 @@ namespace CryptoCheck
         public MainWindow()
         {
             InitializeComponent();
-            GeneratorCoinsField();
             _coinGeckoResponse = new CoinGeckoResponse();
-            string coinInfo = "";
+            ObservableCollection<Coin> employees = new ObservableCollection<Coin>();
             foreach (var coin in _coinGeckoResponse.GetCoins())
             {
-                coinInfo += coin.name + "\n";
+                employees.Add(coin);
             }
-            CoinsInfo.Content = coinInfo;
+            DG1.ItemsSource = employees;
         }
 
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
@@ -62,17 +62,8 @@ namespace CryptoCheck
             Application.Current.Shutdown();
         }
 
-        private void GeneratorCoinsField()
+        private void DG1_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
         {
-            Grid myGrid = new Grid();
-            myGrid.Width = 250;
-            myGrid.Height = 100;
-            myGrid.HorizontalAlignment = HorizontalAlignment.Left;
-            myGrid.VerticalAlignment = VerticalAlignment.Top;
-            myGrid.ShowGridLines = true;
-
-            this.Content  myGrid;
-           
         }
     }
 }
