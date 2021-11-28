@@ -15,7 +15,7 @@
     <Window.DataContext>
         <viewmodel:MainViewModel/>
     </Window.DataContext>
-    
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="25"/>
@@ -62,9 +62,9 @@
                             Click="CloseButton_Click"/>
 
                 </StackPanel>
-                            
+
             </Grid>
-            
+
         </Border>
 
         <Grid Background="#2F3136"
@@ -82,6 +82,22 @@
                    Margin="8,0,0,0"/>
 
         </Grid>
-        
+
+        <Grid Grid.Column="1" 
+                  Grid.Row="1">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition/>
+                <RowDefinition Height="60"/>
+            </Grid.RowDefinitions>
+            
+            <Label Name="CoinsInfo"
+                   VerticalAlignment="Center"
+                   FontFamily="Medium"
+                   Foreground="White"
+                   Margin="8,0,0,0"/>
+        </Grid>
+
     </Grid>
 </Window>
