@@ -32,7 +32,7 @@ namespace CryptoCheck.coingeckoResponse
             foreach (var coin in result)
             {
 
-                Console.WriteLine($"Name: {coin.id}\nCurent price: {coin.current_price}\nMarket Capital: {coin.market_cap_rank}");
+                Console.WriteLine($"Name: {coin.name}\nCurent price: {coin.current_price}\nMarket Capital: {coin.market_cap_rank}");
             }
 
         }

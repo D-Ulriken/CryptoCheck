@@ -26,8 +26,11 @@ namespace CryptoCheck
         public MainWindow()
         {
             InitializeComponent();
+           
             _coinGeckoResponse = new CoinGeckoResponse();
+            
             ObservableCollection<Coin> employees = new ObservableCollection<Coin>();
+           
             foreach (var coin in _coinGeckoResponse.GetCoins())
             {
                 employees.Add(coin);
@@ -64,6 +67,7 @@ namespace CryptoCheck
 
         private void DG1_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
         {
+
         }
     }
 }

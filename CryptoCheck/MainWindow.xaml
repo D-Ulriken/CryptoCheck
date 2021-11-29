@@ -83,10 +83,27 @@
 
         </Grid>
 
-        <Grid Grid.Column="1" 
-                  Grid.Row="1">
+        <Grid Grid.Column="1" Grid.Row="1" Background="#FF2D2F32">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition/>
+            </Grid.RowDefinitions>
 
-            <DataGrid Name="DG1" ItemsSource="{Binding}" AutoGenerateColumns="True" AutoGeneratingColumn="DG1_AutoGeneratingColumn" />
+            <DataGrid Name="DG1" 
+                      Grid.Row="1"
+                      ItemsSource="{Binding}" 
+                      AutoGenerateColumns="True" 
+                      AutoGeneratingColumn="DG1_AutoGeneratingColumn" 
+                      Background="#36393F" 
+                      GridLinesVisibility="Horizontal" 
+                      HeadersVisibility="None" 
+                      Foreground="White"
+                      RowBackground="#FF36393F" 
+                      RowHeight="30"
+                      FontSize="14"/>
+
+
+
         </Grid>
 
     </Grid>
