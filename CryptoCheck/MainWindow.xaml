@@ -100,9 +100,13 @@
                       Foreground="White"
                       RowBackground="#FF36393F" 
                       RowHeight="30"
-                      FontSize="14"/>
-
-
+                      FontSize="14">
+                <DataGrid.Resources>
+                    <DataTemplate x:Key="ImgCell">
+                        <Image Source="{Binding Path=image}"/>
+                    </DataTemplate>
+                </DataGrid.Resources>
+            </DataGrid>
 
         </Grid>
 

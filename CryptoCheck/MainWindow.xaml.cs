@@ -67,7 +67,15 @@ namespace CryptoCheck
 
         private void DG1_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
         {
-
+            if (e.PropertyName == "image")
+            {
+                e.Column = new DataGridTemplateColumn
+                {
+                    CellTemplate = (sender as DataGrid).Resources["ImgCell"] as DataTemplate,
+                    HeaderTemplate = e.Column.HeaderTemplate,
+                    Header = e.Column.Header
+                };
+            }
         }
     }
 }
